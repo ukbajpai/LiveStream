@@ -61,7 +61,7 @@ export class OverlayComponent implements AfterContentChecked, OnInit {
   }
  
 
-  onSubmit(value) {
+  onSubmit() {
     if (this.cam_form.valid) {
       this.service.addCamera(this.cam_form.value).subscribe(value => alert("Camera Added"));
     }

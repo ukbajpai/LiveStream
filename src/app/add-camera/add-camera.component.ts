@@ -22,7 +22,7 @@ export class AddCameraComponent  implements OnInit {
   ngOnInit() {
     
   }
-  onSubmit(value) {
+  onSubmit() {
     if (this.cam_form.valid) {
       this.service.addCamera(this.cam_form.value).subscribe(value => alert("Camera Added"));
       this.router.navigate(['/']);

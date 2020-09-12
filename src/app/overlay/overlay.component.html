@@ -5,7 +5,7 @@
 
     <h1>Add Camera</h1>
     <div class="width-60">
-      <form [formGroup]="cam_form" (ngSubmit)="onSubmit()">
+      <form [formGroup]="cam_form" (ngSubmit)="onSubmit($data)">
       <label for="ipAddr">Camera Ip Address</label>
       <input type="text" id="camIp" formControlName="camIp" placeholder="xxx.xxx.xxx:xxxx">
 
