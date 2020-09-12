@@ -7,20 +7,15 @@ import { Observable } from 'rxjs';
 })
 export class AddCameraService {
 
-  apiUrl: string = "https://camera-uk.getsandbox.com:443/addCamera";
-  httpOptions = {
-    headers: new HttpHeaders({
-      'Content-Type':  'application/json',
-      'Authorization': 'my-auth-token'
-    })
-  };
+  apiUrl: string = "https://backend-anter.herokuapp.com";
+ 
   constructor(private http: HttpClient) { }
 
   addCamera (camera: any): Observable<any> {
-    return this.http.post<any>(this.apiUrl, camera, this.httpOptions);
+    return this.http.post<any>(this.apiUrl+"/savecam", camera);
   }
 
   retrieveCamera (): Observable<any> {
-    return this.http.get(this.apiUrl);
+    return this.http.get(this.apiUrl+"/getcam");
   }
 }

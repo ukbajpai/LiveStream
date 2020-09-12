@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { ReactiveFormsModule } from "@angular/forms";
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -12,6 +12,8 @@ import { AddContributorComponent } from './add-contributor/add-contributor.compo
 import { UserOptionsComponent } from './user-options/user-options.component';
 import { ClockComponent } from './clock/clock.component';
 import { ServiceComponent } from './service/service.component';
+import { HttpClientModule } from '@angular/common/http';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -23,19 +25,17 @@ import { ServiceComponent } from './service/service.component';
     AddContributorComponent,
     UserOptionsComponent,
     ClockComponent,
-    ServiceComponent
+    ServiceComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
+     HttpClientModule,
+     ReactiveFormsModule,
     AppRoutingModule
+    
   ],
   providers: [],
-  entryComponents: [ 
-    AddCameraComponent, 
-    AddContributorComponent, 
-    UserOptionsComponent,
-    ServiceComponent
-  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

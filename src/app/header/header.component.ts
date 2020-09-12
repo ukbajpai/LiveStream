@@ -20,7 +20,8 @@ export class HeaderComponent implements OnInit {
   }
 
   openHeaderNav(){
-    this.overlaySharedServ.updateOverlayStatus(true, new ParentOverlayComponent(UserOptionsComponent));
+   // this.overlaySharedServ.updateOverlayStatus(true, new ParentOverlayComponent(UserOptionsComponent));
+   document.getElementById("myNav").style.width = "100%";
   }
 
   openHeaderContriNav(){

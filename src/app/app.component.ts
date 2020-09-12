@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AddCameraService} from './add-camera.service'
 
 @Component({
   selector: 'app-root',
@@ -8,7 +9,9 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'LiveStream';
   cameraList : any = [];
-  constructor(){
+  constructor(private service: AddCameraService){
+    this.service.retrieveCamera().subscribe(value => this.cameraList = value);
+    console.log(JSON.stringify(this.cameraList));
   }
   
 }
